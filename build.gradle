@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.akhikhl.gretty:gretty:1.2.4"
+    }
+}
+
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'war'
+apply plugin: "org.akhikhl.gretty"
+apply from: "gradle/properties-handler.gradle"
+
+repositories {
+    jcenter()
+    maven { url 'http://nexus.hbsp.harvard.edu/content/repositories/snapshots'}
+    maven { url 'http://nexus.hbsp.harvard.edu/content/repositories/releases' }
+    maven { url "http://repo1.maven.org/maven2/" }
+    maven { url "http://repo2.maven.org/maven2/" }
+}
+
+dependencies {
+    ['core', 'beans', 'webmvc', 'web', 'context'].each {
+        compile "org.springframework:spring-${it}:4.1.9.RELEASE"
+    }
+
+    compile 'com.github.ulisesbocchio:jasypt-spring-boot:1.6'
+
+    //
+    compile 'org.jasypt:jasypt:1.9.2'
+    compile 'org.jasypt:jasypt-spring31:1.9.2'
+
+    // HikariCP
+    compile 'com.zaxxer:HikariCP:2.4.5'
+    
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-all:1.10.19'
+}

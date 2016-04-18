@@ -1,0 +1,5 @@
+task decryptProperties << {
+    System.properties.put("jasypt.encryptor.password", "57592664c22539bf8cfd0818dc9245e943742856")
+}
+
+processResources.dependsOn decryptProperties
