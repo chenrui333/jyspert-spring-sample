@@ -36,6 +36,7 @@ dependencies {
     compile 'org.jasypt:jasypt-spring31:1.9.2'
 
     // HikariCP
+    compile 'mysql:mysql-connector-java:5.1.38'
     compile 'com.zaxxer:HikariCP:2.4.5'
     
     testCompile 'junit:junit:4.12'

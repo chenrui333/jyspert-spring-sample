@@ -13,7 +13,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = {"org.hbsp.cl.report"})
-@EnableEncryptableProperties
 @Import(TestConfig.class)
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
