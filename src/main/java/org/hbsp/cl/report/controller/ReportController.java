@@ -19,18 +19,15 @@ public class ReportController {
     @Autowired
     private HikariConfig config;
 
-    @RequestMapping(value = "/config", method = RequestMethod.GET)
+    @RequestMapping(value = "/ping", method = RequestMethod.GET)
     @ResponseBody
     public String showConfig() {
-        String good = "good";
-        return good;
+        return "pong";
     }
 
     @RequestMapping(value = "/ds", method = RequestMethod.GET)
     @ResponseBody
     public String showHikariConfig() {
-        String ds = "password: " + config.getPassword() + " \n";
-
-        return ds;
+        return "password: " + config.getPassword() + " \n";
     }
 }

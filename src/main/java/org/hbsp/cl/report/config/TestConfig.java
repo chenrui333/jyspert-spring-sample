@@ -30,8 +30,5 @@ public class TestConfig {
         return hikariConfig;
     }
 
-    @Bean
-    PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
-    }
+
 }

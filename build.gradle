@@ -33,7 +33,6 @@ dependencies {
 
     //
     compile 'org.jasypt:jasypt:1.9.2'
-    compile 'org.jasypt:jasypt-spring31:1.9.2'
 
     // HikariCP
     compile 'mysql:mysql-connector-java:5.1.38'
